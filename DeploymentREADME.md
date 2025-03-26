@@ -169,6 +169,14 @@ Common Issues
 
     Check output files in output/ for AMI build results and deployment logs.
 
+
+
+## References
+
+    Nessus AMI: https://docs.tenable.com/#-Vulnerability-Management-
+    Terraform Modules: https://registry.terraform.io/
+    Packer Documentation: https://www.packer.io/
+
 ## License
 
 This project is licensed under the MIT License.
