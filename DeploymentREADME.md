@@ -1,9 +1,9 @@
-**AWS InFrastructure Automation with Terraform, Packer, and Lambda**
+##AWS InFrastructure Automation with Terraform, Packer, and Lambda##
 
 ## This repository automates the deployment of a Nessus AMI and associated AWS infrastructure using Terraform, Packer, and an event-driven AWS Lambda function. It supports multi-region deployment and includes modular Terraform code, Python scripts for automation, and a GitLab CI/CD pipeline for continuous integration and delivery.
 
 
-**Features**
+##Features##
 
     Nessus AMI Creation: Build a customized AMI with Nessus (a vulnerability assessment tool) using Packer.
 
@@ -18,7 +18,7 @@
     Real-Time Monitoring: Use AWS services like CloudWatch, AWS Config, and WAF for governance and logging.
 
 
-**1. Prerequisites**
+##1. Prerequisites##
 
     Install Required Tools:
     1. Terraform (≥ v1.0)
@@ -29,7 +29,7 @@
        traceback
     AWS CLI for setting up credentials and configurations.
 
-**2. AWS Account Setup:**
+##2. AWS Account Setup:##
 
     Set up AWS credentials:
     Ensure sufficient permissions for:
@@ -39,7 +39,7 @@
       S3: Manage buckets for state files.
       Lambda: Deploy and trigger Lambda functions.
 
-**3. GitLab Runner:
+##3. GitLab Runner:##
 
     Configure a runner for executing CI/CD pipelines.**
 
@@ -48,13 +48,13 @@
 ##Step-by-Step Execution##
 
 
-**1.  Clone the Repository**
+##1.  Clone the Repository##
 
 git clone https://github.com/your-repo/aws-automation
 cd aws-automation
 
 
-**2. Configure Terraform Variables**
+##2. Configure Terraform Variables##
 Create a terraform.tfvars file to specify deployment regions and other variables:
 
 region         = "us-east-1"
@@ -66,14 +66,14 @@ tags = {
 }
 
 
-**3. . Generate a Nessus AMI with Packer**
+##3. Generate a Nessus AMI with Packer##
 Run Packer to build a custom AMI:
 
 packer validate packer-template.json
 packer build packer-template.json
 
 
-**4. Deploy AWS Infrastructure with Terraform**
+##4. Deploy AWS Infrastructure with Terraform##
 Format, validate, and deploy infrastructure:
 
 python terraform_automation.py
@@ -117,14 +117,14 @@ terraform_deploy:
     - terraform apply -auto-approve
     
 
-**Push your code to trigger the pipeline:**
+##Push your code to trigger the pipeline:##
 
 git add .
 git commit -m "Add GitLab CI/CD pipeline"
 git push origin main
 
 
-**Example: Deploying to Multiple Regions**
+##Example: Deploying to Multiple Regions#
 
 ##Modify terraform.tfvars for additional regions:##
 
@@ -137,12 +137,12 @@ tags = {
 }
 
 
-**Run Terraform Deployment:**
+##Run Terraform Deployment:##
 
 AWS_REGION=us-west-2 python terraform_automation.py
 
 
-Troubleshooting
+##Troubleshooting##
 Common Issues
 
     IAM Permission Failures:
@@ -163,13 +163,13 @@ Common Issues
 
         Check Lambda execution roles for permissions to invoke Packer and Terraform commands.
 
-Logs and Debugging
+##Logs and Debugging##
 
     Use AWS CloudWatch for monitoring Lambda executions.
 
     Check output files in output/ for AMI build results and deployment logs.
 
-License
+##License##
 
 This project is licensed under the MIT License.
 
