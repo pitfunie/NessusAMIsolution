@@ -1,4 +1,4 @@
-## AWS InFrastructure Automation with Terraform, Packer, and Lambda
+### AWS InFrastructure Automation with Terraform, Packer, and Lambda
 
 ## This repository automates the deployment of a Nessus AMI and associated AWS infrastructure using Terraform, Packer, and an event-driven AWS Lambda function. It supports multi-region deployment and includes modular Terraform code, Python scripts for automation, and a GitLab CI/CD pipeline for continuous integration and delivery.
 
