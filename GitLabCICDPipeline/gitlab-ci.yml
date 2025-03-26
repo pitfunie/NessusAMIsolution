@@ -1,0 +1,22 @@
+stages:
+  - packer
+  - terraform
+
+packer_build:
+  image: hashicorp/packer:latest
+  script:
+    - packer validate packer/packer-template.json
+    - packer build packer/packer-template.json
+  artifacts:
+    paths:
+      - ami_generated_output.txt
+
+terraform_deploy:
+  image: hashicorp/terraform:latest
+  dependencies:
+    - packer_build
+  script:
+    - terraform init
+    - terraform validate
+    - terraform plan
+    - terraform apply -auto-approve
